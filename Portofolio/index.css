@@ -1,0 +1,14 @@
+.home-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%; /* ✅ Ini yang membuatnya jadi lingkaran */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Opsional: tambah bayangan */
+}
+
+@media (max-width: 768px) {
+    .home-image img {
+        width: 250px;
+        height: 250px;
+    }
+}

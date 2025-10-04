@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills - Portfolio Saya</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="skills.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
-                <li class="nav-item"><a href="skills.html" class="nav-link">Skill</a></li>
+                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
                 <li class="nav-item"><a href="certified.html" class="nav-link">Certified</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
@@ -41,12 +42,6 @@
                     <div class="skill-card" id="linux-card">
                     <!-- Pilihan 1: Ikon terminal (karena Debian sering dipakai via CLI) -->
                     <i class="fas fa-terminal"></i>
-
-                    <!-- Pilihan 2: Ikon server -->
-                    <i class="fas fa-server"></i>
-
-                    <!-- Pilihan 3: Tetap pakai ikon Linux (lebih dikenal) -->
-                    <i class="fab fa-linux"></i>
                     <h3>Debian</h3>
                     <p>Click Here</p>
                 </div>
@@ -63,7 +58,14 @@
             </div>
         </div>
     </section>
-
+<!-- Modal Popup -->
+<div id="skillModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 id="modalTitle">Judul Skill</h3>
+        <p id="modalDescription">Deskripsi akan muncul di sini.</p>
+    </div>
+</div>
 
     <footer class="footer">
         <div class="container">
@@ -72,5 +74,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="skills.js"></script>
 </body>
 </html>

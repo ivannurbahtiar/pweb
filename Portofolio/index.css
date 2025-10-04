@@ -1,14 +1,24 @@
 .home-image img {
-    width: 300px;
+     width: 300px;
     height: 300px;
     object-fit: cover;
-    border-radius: 50%; /* ✅ Ini yang membuatnya jadi lingkaran */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Opsional: tambah bayangan */
+    border-radius: 50%;
+    /* ✨ Efek cahaya memancar (glow) */
+    box-shadow: 
+        0 0 0 4px rgba(52, 152, 219, 0.2),
+        0 0 20px 8px rgba(52, 152, 219, 0.15),
+        0 0 40px 12px rgba(52, 152, 219, 0.1);
+    position: relative;
+    z-index: 2;
 }
 
 @media (max-width: 768px) {
     .home-image img {
         width: 250px;
         height: 250px;
+        box-shadow: 
+            0 0 0 3px rgba(52, 152, 219, 0.2),
+            0 0 15px 6px rgba(52, 152, 219, 0.15),
+            0 0 30px 10px rgba(52, 152, 219, 0.1);
     }
 }

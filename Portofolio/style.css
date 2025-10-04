@@ -85,13 +85,13 @@ body {
 }
 
 .home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* ⬅️ Ini yang bikin konten kiri & gambar kanan */
+    gap: 40px;
+    padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
 }
 
 .home-content h1 {

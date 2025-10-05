@@ -21,8 +21,15 @@
     position: relative;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     text-align: left;
-}
 
+    /* ✅ Tambahkan ini untuk scroll */
+    max-height: 70vh; /* Tinggi maksimal 70% dari viewport */
+    overflow-y: auto; /* Aktifkan scroll jika konten melebihi */
+    display: flex;
+    flex-direction: column;
+    /* ... kode sebelumnya ... */
+    scroll-behavior: smooth;
+}
 /* Close Button */
 .close {
     position: absolute;
@@ -46,13 +53,16 @@
     }
 }
 .modal-content ul {
-    text-align: left;
     padding-left: 20px;
     margin: 12px 0;
     line-height: 1.6;
 }
-
 .modal-content li {
     margin-bottom: 8px;
     font-size: 14px;
+}
+
+.modal-content p {
+    margin: 12px 0;
+    line-height: 1.6;
 }

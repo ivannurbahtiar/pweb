@@ -1,62 +1,69 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certified - Portfolio Saya</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Portfolio</h2>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
-                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="certified.html" class="nav-link">Certified</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+<section id="certified" class="certified-section">
+  <div class="container">
+    <h2 class="section-title">Certified</h2>
+    
+    <link rel="stylesheet" href="certified.css">
 
-    <section id="certified" class="certified-section">
-        <div class="container">
-            <h2 class="section-title">Certified</h2>
-            <div class="certificates-grid">
-                <div class="certificate-card">
-                    <img src="https://placeholder-image-service.onrender.com/image/200x150?prompt=IT%20certification%20badge%20with%20blue%20accent&id=cert1" alt="Google Cloud">
-                    <h3>Google Cloud Certified</h3>
-                    <p>Cloud Architect Professional</p>
-                </div>
-                <div class="certificate-card">
-                    <img src="https://placeholder-image-service.onrender.com/image/200x150?prompt=AWS%20certification%20document%20with%20official%20seal&id=cert2" alt="AWS">
-                    <h3>AWS Certified</h3>
-                    <p>Solutions Architect</p>
-                </div>
-                <div class="certificate-card">
-                    <img src="https://placeholder-image-service.onrender.com/image/200x150?prompt=React%20developer%20certificate%20with%20modern%20design&id=cert3" alt="React">
-                    <h3>React Developer</h3>
-                    <p>Advanced Certification</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Tab Navigation -->
+    <div class="cert-tabs">
+      <button class="tab-btn active" data-tab="aguna">Aguna</button>
+      <button class="tab-btn" data-tab="netacad">Netacad</button>
+      <button class="tab-btn" data-tab="fortinet">Fortinet</button>
+      <button class="tab-btn" data-tab="redhat">RedHat</button>
+      <button class="tab-btn" data-tab="microsoft">Microsoft & LinkedIn</button>
+    </div>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Portfolio Ivan Nurbahtiar. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- Certificate Grid -->
+    <div class="certificates-grid">
+      <!-- Aguna -->
+      <div class="certificate-card" data-category="aguna">
+        <img src="./images/Network_page-0001.jpg" alt="Aguna Certificates">
+      </div>
+      <div class="certificate-card" data-category="aguna">
+        <img src="./images/VM_page-0001.jpg" alt="Aguna Certificates">
+      </div>
+      <div class="certificate-card" data-category="aguna">
+        <img src="./images/Linux_page-0001.jpg" alt="Aguna Certificates">
+      </div>
+      <div class="certificate-card" data-category="aguna">
+        <img src="./images/PNET_page-0001.jpg" alt="Aguna Certificates">
+      </div>
+       <div class="certificate-card" data-category="aguna">
+        <img src="./images/python_page-0001.jpg" alt="Aguna Certificates">
+      </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+      <!-- Netacad -->
+      <div class="certificate-card hidden" data-category="netacad">
+        <img src="./images/CCNAITNUpdated20250816-32-4dzqj0_page-0001.jpg" alt="Netacad Certificates">
+      </div>
+
+      <!-- Fortinet -->
+      <div class="certificate-card hidden" data-category="fortinet">
+        <img src="./images/Getting Started in Cybersecurity 2.0 Self-Paced_page-0001.jpg" alt="Fortinet Certificates">
+      </div>
+      <div class="certificate-card hidden" data-category="fortinet">
+        <img src="./images/Introduction to the Threat Landscape 2.0 Self-Paced_page-0001.jpg" alt="Fortinet Certificates">
+      </div>
+      <div class="certificate-card hidden" data-category="fortinet">
+        <img src="./images/Technical Introduction to Cybersecurity 1.0 Self-Paced_page-0001.jpg" alt="Fortinet Certificates">
+      </div>
+
+      <!-- RedHat -->
+      <div class="certificate-card hidden" data-category="redhat">
+        <img src="./images/RedHatTrainingGettingStartedwithLinuxFundamentalsRH104-RHA-Ver.9.1_Badge20250619-27-ka0cwc_page-0001.jpg" alt="RedHat Certificates">
+      </div>
+
+      <!-- Microsoft & LinkedIn -->
+      <div class="certificate-card hidden" data-category="microsoft">
+        <img src="./images/cert-microsoft.png" alt="Microsoft Certificates">
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+      <a href="index.html" class="btn-back">Back</a>
+    </div>
+  </div>
+</section>
+
+<script src="certified.js"></script>

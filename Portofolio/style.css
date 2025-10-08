@@ -198,14 +198,16 @@ section {
 
 /* About Section */
 .about-section {
+     padding: 80px 20px;
     background: rgba(255, 255, 255, 0.03);
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 4rem;
+    display: flex;
     align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-text p {
@@ -215,68 +217,31 @@ section {
     line-height: 1.8;
 }
 
-.about-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.about-text ul {
+    padding-left: 20px;
+    margin: 12px 0;
 }
 
-.stat {
-    text-align: center;
+.about-text li {
+    color: rgb(255, 255, 255);
+    margin-bottom: 8px;
 }
 
-.stat h3 {
-    color: #48cae4;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+.about-image {
+    flex-shrink: 0;
 }
 
-.stat p {
-    color: white;
-    font-weight: 500;
-}
-
-/* Certified Section */
-.certified-section {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.certificate-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    backdrop-filter: blur(10px);
+.about-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #3498db;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
-
-.certificate-card:hover {
-    transform: translateY(-5px);
-}
-
-.certificate-card img {
-    width: 100%;
-    max-width: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-.certificate-card h3 {
-    color: white;
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-}
-
-.certificate-card p {
-    color: #ccc;
+.about-image img:hover {
+    transform: scale(1.05);
 }
 
 /* Contact Section */

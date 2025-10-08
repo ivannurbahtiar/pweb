@@ -1,0 +1,101 @@
+/* Container */
+.certified-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f8f9fc;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Tabs */
+.cert-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background-color: #e7e8fc;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.tab-btn.active {
+  background-color: #8c9eff;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Certificate Grid */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.certificate-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  width: 220px;       /* Ukuran kecil seperti contoh */
+  text-align: center;
+}
+
+.certificate-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.certificate-card.hidden {
+  display: none;
+}
+
+/* Back Button */
+.back-button {
+  margin-top: 40px;
+}
+
+.btn-back {
+  background-color: #e7e8fc;
+  padding: 10px 25px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #8c9eff;
+  color: #fff;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .certificate-card {
+    width: 180px;
+  }
+  .tab-btn {
+    font-size: 0.9rem;
+    padding: 7px 15px;
+  }
+}

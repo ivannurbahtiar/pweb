@@ -41,3 +41,30 @@
             0 0 40px 12px rgba(52, 152, 219, 0.2);
     }
 }
+.download-cv {
+    margin-top: 20px;
+    text-align: left; /* ✅ Ini yang bikin tombol rata kiri */
+}
+
+.btn-download {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-size: 13px;
+}
+
+.btn-download:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn-download:active {
+    transform: translateY(0);
+}

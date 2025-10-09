@@ -33,8 +33,8 @@
 }
 
 .tab-btn.active {
-  background-color: #8c9eff;
-  color: #fff;
+ 
+  color: #2748ff;
   transform: scale(1.05);
 }
 
@@ -54,15 +54,78 @@
   border-radius: 16px;
   padding: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  width: 220px;       /* Ukuran kecil seperti contoh */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 220px;
   text-align: center;
+  cursor: pointer;
+  overflow: hidden; /* penting agar gambar tidak keluar saat zoom */
 }
 
+.certificate-card:hover {
+  transform: scale(1.05);
+}
+
+/* Efek saat hover pada seluruh kartu */
+.certificate-card:hover {
+  transform: scale(1.05); /* sedikit membesar */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* efek bayangan halus */
+}
+
+/* Modal (popup) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 15px;
+  animation: zoomIn 0.3s ease;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #ccc;
+}
+
+/* Animasi muncul */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hover effect */
 .certificate-card img {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .certificate-card.hidden {
@@ -98,4 +161,17 @@
     font-size: 0.9rem;
     padding: 7px 15px;
   }
+}
+
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer p {
+    color: rgb(0, 0, 0);
+    opacity: 0.8;
 }

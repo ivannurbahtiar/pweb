@@ -1,89 +1,109 @@
-<section id="certified" class="certified-section">
-  <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
-                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="project.html" class="nav-link">Project</a></li>
-                <li class="nav-item"><a href="certified.html" class="nav-link">Certified</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-  <div class="container">
-    <h2 class="section-title">Certified</h2>
-    
-    <link rel="stylesheet" href="certified.css">
-
-    <!-- Tab Navigation -->
-    <div class="cert-tabs">
-      <button class="tab-btn active" data-tab="aguna">Aguna</button>
-      <button class="tab-btn" data-tab="netacad">Netacad</button>
-      <button class="tab-btn" data-tab="fortinet">Fortinet</button>
-      <button class="tab-btn" data-tab="redhat">RedHat</button>
-      <button class="tab-btn" data-tab="microsoft">Microsoft & LinkedIn</button>
-    </div>
-
-    <!-- Certificate Grid -->
-    <div class="certificates-grid">
-      <!-- Aguna -->
-      <div class="certificate-card" data-category="aguna">
-        <img src="./images/Network_page-0001.jpg" alt="Aguna Certificates">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certified - Portfolio Saya</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="certified.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- ✅ Navbar sama seperti di skills.html -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <h2>Portfolio</h2>
       </div>
-      <div class="certificate-card" data-category="aguna">
-        <img src="./images/VM_page-0001.jpg" alt="Aguna Certificates">
-      </div>
-      <div class="certificate-card" data-category="aguna">
-        <img src="./images/Linux_page-0001.jpg" alt="Aguna Certificates">
-      </div>
-      <div class="certificate-card" data-category="aguna">
-        <img src="./images/PNET_page-0001.jpg" alt="Aguna Certificates">
-      </div>
-      <div class="certificate-card" data-category="aguna">
-        <img src="./images/python_page-0001.jpg" alt="Aguna Certificates">
-      </div>
-
-      <!-- Netacad -->
-      <div class="certificate-card hidden" data-category="netacad">
-        <img src="./images/CCNAITNUpdated20250816-32-4dzqj0_page-0001.jpg" alt="Netacad Certificates">
-      </div>
-
-      <!-- Fortinet -->
-      <div class="certificate-card hidden" data-category="fortinet">
-        <img src="./images/Getting Started in Cybersecurity 2.0 Self-Paced_page-0001.jpg" alt="Fortinet Certificates">
-      </div>
-      <div class="certificate-card hidden" data-category="fortinet">
-        <img src="./images/Introduction to the Threat Landscape 2.0 Self-Paced_page-0001.jpg" alt="Fortinet Certificates">
-      </div>
-      <div class="certificate-card hidden" data-category="fortinet">
-        <img src="./images/Technical Introduction to Cybersecurity 1.0 Self-Paced_page-0001.jpg" alt="Fortinet Certificates">
-      </div>
-
-      <!-- RedHat -->
-      <div class="certificate-card hidden" data-category="redhat">
-        <img src="./images/RedHatTrainingGettingStartedwithLinuxFundamentalsRH104-RHA-Ver.9.1_Badge20250619-27-ka0cwc_page-0001.jpg" alt="RedHat Certificates">
-      </div>
-
-      <!-- Microsoft & LinkedIn -->
-      <div class="certificate-card hidden" data-category="microsoft">
-        <img src="./images/Salinan SertifikatPenyelesaian_Career Essentials in Generative AI by Microsoft and LinkedIn_page-0001 Ivan Nurbahtiar (1).jpg" alt="Microsoft Certificates">
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About Me</a></li>
+        <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+        <li class="nav-item"><a href="project.html" class="nav-link">Project</a></li>
+        <li class="nav-item"><a href="certified.html" class="nav-link active">Certified</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
     </div>
+  </nav>
 
-    <!-- Back Button -->
-    <div class="back-button">
-      <a href="index.html" class="btn-back">Back</a>
-    </div>
+  <!-- ✅ Bagian konten Certified -->
+  <section id="certified" class="certified-section">
+    <div class="container">
+      <h2 class="section-title">Certified</h2>
+
+      <!-- Tab Navigation -->
+      <div class="cert-tabs">
+        <button class="tab-btn active" data-tab="aguna">Aguna</button>
+        <button class="tab-btn" data-tab="netacad">Netacad</button>
+        <button class="tab-btn" data-tab="fortinet">Fortinet</button>
+        <button class="tab-btn" data-tab="redhat">RedHat</button>
+        <button class="tab-btn" data-tab="microsoft">Microsoft & LinkedIn</button>
+      </div>
+
+      <!-- Certificate Grid -->
+      <div class="certificates-grid">
+        <!-- Aguna -->
+        <div class="certificate-card" data-category="aguna">
+          <img src="./images/Network_page-0001.jpg" alt="Aguna Certificates">
+        </div>
+        <div class="certificate-card" data-category="aguna">
+          <img src="./images/VM_page-0001.jpg" alt="Aguna Certificates">
+        </div>
+        <div class="certificate-card" data-category="aguna">
+          <img src="./images/Linux_page-0001.jpg" alt="Aguna Certificates">
+        </div>
+        <div class="certificate-card" data-category="aguna">
+          <img src="./images/PNET_page-0001.jpg" alt="Aguna Certificates">
+        </div>
+        <div class="certificate-card" data-category="aguna">
+          <img src="./images/python_page-0001.jpg" alt="Aguna Certificates">
+        </div>
+
+        <!-- Netacad -->
+        <div class="certificate-card hidden" data-category="netacad">
+          <img src="./images/CCNAITNUpdated20250816-32-4dzqj0_page-0001.jpg" alt="Netacad Certificates">
+        </div>
+
+        <!-- Fortinet -->
+        <div class="certificate-card hidden" data-category="fortinet">
+          <img src="./images/Getting Started in Cybersecurity 2.0 Self-Paced_page-0001.jpg" alt="Fortinet Certificates">
+        </div>
+        <div class="certificate-card hidden" data-category="fortinet">
+          <img src="./images/Introduction to the Threat Landscape 2.0 Self-Paced_page-0001.jpg" alt="Fortinet Certificates">
+        </div>
+        <div class="certificate-card hidden" data-category="fortinet">
+          <img src="./images/Technical Introduction to Cybersecurity 1.0 Self-Paced_page-0001.jpg" alt="Fortinet Certificates">
+        </div>
+
+        <!-- RedHat -->
+        <div class="certificate-card hidden" data-category="redhat">
+          <img src="./images/RedHatTrainingGettingStartedwithLinuxFundamentalsRH104-RHA-Ver.9.1_Badge20250619-27-ka0cwc_page-0001.jpg" alt="RedHat Certificates">
+        </div>
+
+        <!-- Microsoft & LinkedIn -->
+        <div class="certificate-card hidden" data-category="microsoft">
+          <img src="./images/Salinan SertifikatPenyelesaian_Career Essentials in Generative AI by Microsoft and LinkedIn_page-0001 Ivan Nurbahtiar (1).jpg" alt="Microsoft Certificates">
+        </div>
+  </section>
+
+  <!-- ✅ Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
   </div>
-</section>
 
-<!-- ✅ Modal untuk tampilan gambar besar -->
-<div id="imageModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modalImage">
-</div>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Portfolio Ivan Nurbahtiar. All rights reserved.</p>
+    </div>
+  </footer>
 
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2025 Portfolio Ivan Nurbahtiar. All rights reserved.</p>
-  </div>
-</footer>
-
-<script src="certified.js"></script>
+  <script src="script.js"></script>
+  <script src="certified.js"></script>
+</body>
+</html>

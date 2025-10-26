@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aruna Store</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">A</div>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./atk.html" class="active">Product</a></li>
+        <li><a href="#">Order</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Developer</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="big-circle"></div>
+
+    <!-- Sub Menu -->
+    <div class="sub-menu">
+      <a href="#" class="sub-active">ATK</a>
+      <a href="#">Aksesoris</a>
+      <a href="#">Perlengkapan</a>
+      <a href="#">Make Up</a>
+      <a href="#">Skincare</a>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x200?text=Notebook" alt="Notebook">
+        <h3>Notebook</h3>
+        <p>Rp 4.900</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x200?text=Pulpen+Karakter" alt="Pulpen Karakter">
+        <h3>Pulpen Karakter</h3>
+        <p>Rp 2.900</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x200?text=Tempat+ATK" alt="Tempat ATK">
+        <h3>Tempat ATK</h3>
+        <p>Rp 6.900</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x200?text=Penghapus+Lucu" alt="Penghapus Lucu">
+        <h3>Penghapus Lucu</h3>
+        <p>Rp 6.000</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x200?text=Kalkulator+Mini" alt="Kalkulator Mini">
+        <h3>Kalkulator mini</h3>
+        <p>Rp 10.000</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Website Elegan. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+      });
+    }
+
+    // Highlight active link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.querySelectorAll('nav a').forEach(el => el.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Highlight sub-menu active
+    document.querySelectorAll('.sub-menu a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.querySelectorAll('.sub-menu a').forEach(el => el.classList.remove('sub-active'));
+        this.classList.add('sub-active');
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order - Toko Aruna</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" class="logo">
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="order.html" class="active">Order</a>
+      <a href="about-us.html">About us</a>
+      <a href="developer.html">Developer</a>
+    </nav>
+  </header>
+
+  <main class="order">
+    <h2>Form Order</h2>
+    <p>Isi data berikut untuk memesan produk.</p>
+
+    <form action="backend/process_order.php" method="POST">
+      <label>Nama Pembeli :</label>
+      <input type="text" name="nama" required>
+
+      <label>Pilih Produk :</label>
+      <input type="text" name="produk" required>
+
+      <label>Jumlah :</label>
+      <input type="number" name="jumlah" required>
+
+      <label>No. WhatsApp / Email :</label>
+      <input type="text" name="kontak" required>
+
+      <button type="submit">Kirim Pesanan</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

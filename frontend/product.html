@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product - Toko Aruna</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" class="logo">
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="product.html" class="active">Product</a>
+      <a href="order.html">Order</a>
+      <a href="about-us.html">About us</a>
+      <a href="developer.html">Developer</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="product-nav">
+      <button class="prod-btn active" data-category="atk">ATK</button>
+      <button class="prod-btn" data-category="aksesoris">Aksesoris</button>
+      <button class="prod-btn" data-category="perlengkapan">Perlengkapan makan</button>
+      <button class="prod-btn" data-category="makeup">Make Up</button>
+      <button class="prod-btn" data-category="skincare">Skincare</button>
+    </div>
+
+    <div id="product-container"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

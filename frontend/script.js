@@ -1,52 +1,88 @@
 document.addEventListener("DOMContentLoaded", () => {
   const productData = {
     atk: [
-      { name: "Notebook", price: "Rp 4.500", img: "atk1.jpg" },
-      { name: "Pulpen Karakter", price: "Rp 2.500", img: "atk2.jpg" },
-      { name: "Tempat ATK", price: "Rp 6.500", img: "atk3.jpg" },
+      { name: "Notebook", price: "Rp 4.500", img: "/notebook.jpg" },
+      { name: "Pulpen Karakter", price: "Rp 2.500", img: "/pulpen karakter.jpg" },
+      { name: "Tempat ATK", price: "Rp 6.500", img: "/tempatatk.jpg" },
+      { name: "Penghapus Lucu", price: "Rp 6.000", img: "/penghapus-lucu.png" },
+      { name: "Kalkulator Mini", price: "Rp 10.000", img: "/kalkulator-mini.jpg" },
     ],
     aksesoris: [
-      { name: "Jepit rambut", price: "Rp 14.000", img: "ak1.jpg" },
-      { name: "Bando Beruang", price: "Rp 9.000", img: "ak2.jpg" },
+      { name: "Jepit Rambut", price: "Rp 14.000", img: "/jepit rambut.jpg" },
+      { name: "Bando Beruang", price: "Rp 9.000", img: "/bando beruang.jpg" },
+      { name: "Cermin Motif Kucing", price: "Rp 22.000", img: "/cermin motif kucing.jpg" },
+      { name: "Tas Shopie Martin", price: "Rp 125.000", img: "/tas shopie martin.jpg" },
+      { name: "Kotak Tisu Box", price: "Rp 19.000", img: "/kotak tisu box.jpg" },
     ],
     perlengkapan: [
-      { name: "Tempat Bekal", price: "Rp 68.000", img: "pm1.jpg" },
-      { name: "Lunch Box", price: "Rp 50.000", img: "pm2.jpg" },
+      { name: "Tempat Bekal", price: "Rp 68.000", img: "/tempat bekal.jpg" },
+      { name: "Lunch Box", price: "Rp 50.000", img: "/lunch box set.jpg" },
+      { name: "Botol Minum", price: "Rp 22.000", img: "/botol minum.jpg" },
+      { name: "Tempat Makan", price: "Rp 25.000", img: "/tempat makan.jpg" },
+      { name: "Botol Minum", price: "Rp 28.000", img: "/botol minum2.jpg" },
     ],
     makeup: [
-      { name: "Cushion Skintific", price: "Rp 90.000", img: "mu1.jpg" },
-      { name: "Eyeliner Implora", price: "Rp 14.000", img: "mu2.jpg" },
+      { name: "Cushion Skintific", price: "Rp 90.000", img: "/cushion skintific.jpg" },
+      { name: "Eyeliner Implora", price: "Rp 14.000", img: "/eyeliner implora.jpg" },
+      { name: "Bedak Wardah Refil", price: "Rp 33.000", img: "/Bedak Wardah Refil.jpg" },
+      { name: "Liptint Omg", price: "Rp 20.000", img: "/Liptint Omg.jpg" },
+      { name: "Blush on Pixy", price: "Rp 27.000", img: "/Blush on Pixy .jpg" },
     ],
     skincare: [
-      { name: "Face Wash Kahf", price: "Rp 49.000", img: "sk1.jpg" },
-      { name: "Sunscreen Azarine", price: "Rp 29.000", img: "sk2.jpg" },
+      { name: "Animate 1 Paket", price: "Rp 99.000", img: "/Animate 1 Paket.jpg" },
+      { name: "Face Wash Kahf", price: "Rp 49.000", img: "/Face Wash Kahf.jpg" },
+      { name: "Face  Wash Scora", price: "Rp 38.000", img: "/Face  Wash Scora.jpg" },
+      { name: "Sunscreen Azarine ", price: "Rp 29.000", img: "/Sunscreen azarine.jpg" },
+      { name: "Moisturizer Scora", price: "Rp 38.000", img: "/Moisturizer Scora.jpg" },
     ]
   };
 
   const buttons = document.querySelectorAll(".prod-btn");
   const container = document.getElementById("product-container");
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("imgPreview");
+  const closeBtn = document.querySelector(".close");
 
-  if (container) {
-    const renderProducts = (category) => {
-      container.innerHTML = "";
-      productData[category].forEach(p => {
-        container.innerHTML += `
-          <div class="product-item">
-            <img src="images/${p.img}" alt="${p.name}">
-            <h4>${p.name}</h4>
-            <p>${p.price}</p>
-          </div>`;
-      });
-    };
-
-    renderProducts("atk");
-
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        buttons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        renderProducts(btn.dataset.category);
-      });
+  // === Fungsi render produk ===
+  const renderProducts = (category) => {
+    container.innerHTML = "";
+    productData[category].forEach(p => {
+      container.innerHTML += `
+        <div class="product-item">
+          <img src="images${p.img}" alt="${p.name}">
+          <h4>${p.name}</h4>
+          <p>${p.price}</p>
+        </div>`;
     });
-  }
+  };
+
+  // Default tampil kategori ATK
+  renderProducts("atk");
+
+  // Ganti kategori saat tombol diklik
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderProducts(btn.dataset.category);
+    });
+  });
+
+  // === Modal Zoom Gambar ===
+  container.addEventListener("click", (e) => {
+    if (e.target.tagName === "IMG") {
+      modal.style.display = "flex";
+      modalImg.src = e.target.src;
+    }
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 });

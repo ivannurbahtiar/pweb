@@ -1,3 +1,6 @@
+/* =========================================================
+   🌍 GLOBAL STYLE — Berlaku untuk semua halaman
+   ========================================================= */
 body {
   margin: 0;
   background-color: #d94766;
@@ -10,6 +13,8 @@ header {
   display: flex;
   align-items: center;
   padding: 10px 20px;
+  justify-content: space-between; /* 👈 Ini yang membuat logo ke kiri & nav ke kanan */
+
 }
 
 .logo {
@@ -32,6 +37,27 @@ nav a.active {
   color: black;
 }
 
+/* Footer */
+.footer {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer p {
+  color: white;
+  opacity: 0.8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================================
+   🏠 HOME PAGE — Halaman utama produk
+   ========================================================= */
 .product-nav {
   margin-top: 20px;
   text-align: center;
@@ -76,6 +102,61 @@ nav a.active {
   border-radius: 10px;
 }
 
+/* =========================================================
+   🖼️ PRODUCT IMAGE POPUP — Efek zoom saat diklik
+   ========================================================= */
+.modal {
+  display: none; /* disembunyikan awalnya */
+  position: fixed;
+  z-index: 1000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8); /* latar belakang gelap */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%; /* gambar membesar 80% dari layar */
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #ffea70;
+}
+
+/* =========================================================
+   🧾 ORDER PAGE — Halaman pemesanan produk
+   ========================================================= */
+.order {
+  text-align: center;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -104,19 +185,46 @@ button {
   font-weight: bold;
 }
 
+/* =========================================================
+   👥 DEVELOPER PAGE — Halaman daftar pengembang
+   ========================================================= */
 .developer {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 40px 20px; /* Jarak atas/bawah 40px, kiri/kanan 20px */
+
 }
 
 .dev-card {
+  background: #9e2e47;
+  padding: 10px;
+  border-radius: 10px;
   text-align: center;
-  background-color: #d96b81;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  padding-top: 20px;
-  color: white;
+  width: 180px;
+}
+
+.dev-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* =========================================================
+   ℹ️ ABOUT PAGE — Halaman tentang toko
+   ========================================================= */
+.about {
+  text-align: center;
+}
+
+ul {
+  list-style-position: inside;
+  text-align: center;
+  display: inline-block;
+  padding: 0;
+  margin: 0 auto;
 }

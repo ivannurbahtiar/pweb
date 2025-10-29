@@ -39,14 +39,38 @@ nav a.active {
 
 /* Footer */
 .footer {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 1rem 0;
+  background-color: #111;
+  color: #fff;
+  padding: 15px 10px;
+  font-size: 14px;
   text-align: center;
 }
 
-.footer p {
-  color: white;
-  opacity: 0.8;
+.footer-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f8c3d4; /* Warna pink lembut */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-item:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.footer-item i {
+  color: #ff4f87;
+  font-size: 16px;
 }
 
 .container {

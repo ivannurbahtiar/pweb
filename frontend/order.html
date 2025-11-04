@@ -24,7 +24,7 @@
     <h2>Form Order</h2>
     <p>Isi data berikut untuk memesan produk.</p>
 
-    <form action="../backend/php/save_order.php" method="POST">
+    <form id="orderForm">
       <label>Nama Pembeli :</label>
       <input type="text" name="nama" required>
 
@@ -39,6 +39,8 @@
 
       <button type="submit">Kirim Pesanan</button>
     </form>
+    </form>
+    <p id="statusMessage">✅ Pesanan Anda sudah terkirim!</p>
   </main>
 
    <!-- ✅ Footer -->

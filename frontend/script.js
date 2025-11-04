@@ -86,3 +86,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+const form = document.getElementById('orderForm');
+const message = document.getElementById('statusMessage');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); // supaya tidak reload
+  message.style.display = 'block'; // tampilkan pesan
+  form.reset(); // kosongkan input
+
+  // sembunyikan lagi setelah 3 detik
+  setTimeout(() => {
+    message.style.display = 'none';
+  }, 3000);
+});

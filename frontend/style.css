@@ -37,6 +37,12 @@ nav a.active {
   color: black;
 }
 
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.2); /* warna hitam transparan */
+  transition: background-color 0.3s ease; /* animasi halus */
+}
+
+
 /* Footer */
 .footer {
   background-color: #111;
@@ -80,7 +86,52 @@ nav a.active {
 }
 
 /* =========================================================
-   🏠 HOME PAGE — Halaman utama produkk
+   🏠 home — Halaman utama 
+   ========================================================= */
+/* TEKS UTAMA */
+.home-text {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  padding-left: 40px; /* jarak dari kiri */
+  color: #fff7f8;
+}
+
+.home-text span {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* FOTO KECIL DI KANAN ATAS */
+.image-small-container {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  display: flex;
+  gap: 20px;
+}
+
+.image-small-container img {
+  width: 120px;
+  height: 120px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* FOTO TOKO BESAR DI BAWAH */
+.image-large {
+  display: block;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 20px;
+  opacity: 0.85; /* Transparansi 85% */
+
+}
+
+/* =========================================================
+   🏠 product — Halaman utama produkk
    ========================================================= */
 .product-nav {
   margin-top: 20px;
@@ -179,6 +230,13 @@ nav a.active {
    ========================================================= */
 .order {
   text-align: center;
+  background-color: #e04a66; /* warna merah muda latar belakang */
+  justify-content: center;  /* ⬅️ membuat konten di tengah secara horizontal */
+  align-items: center;      /* ⬅️ kalau mau di tengah secara vertikal juga */
+  padding: 30px;
+  border-radius: 10px;
+  display: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 form {
@@ -196,17 +254,29 @@ label {
 }
 
 input, button {
-  margin-top: 5px;
-  padding: 8px;
-  border: none;
+  width: 250px;
+  margin: 10px 0;
+  padding: 10px;
   border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 button {
-  background-color: white;
-  color: black;
+  background: #9e2e47;
+  color: white;
   cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background: #7d2438;
+}
+
+#statusMessage {
+  margin-top: 15px;
+  color: rgb(255, 255, 255);
   font-weight: bold;
+  display: none;
 }
 
 /* =========================================================
@@ -232,11 +302,13 @@ button {
 }
 
 .dev-card img {
-  width: 100%;
-  height: auto;
+  width: 100%;             /* Isi penuh lebar kartu */
+  height: 200px;           /* Tinggi tetap agar semua sejajar */
+  object-fit: cover;       /* Potong gambar biar proporsional, tidak gepeng */
   border-radius: 8px;
   display: block;
 }
+
 
 /* =========================================================
    ℹ️ ABOUT PAGE — Halaman tentang toko

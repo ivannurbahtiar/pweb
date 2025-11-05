@@ -1,7 +1,11 @@
+// Jalankan seluruh script setelah halaman selesai dimuat
 document.addEventListener("DOMContentLoaded", () => {
-  // === PRODUK (Hanya jika ada product-container) ===
+
+  // === 🛍️ PRODUK (Hanya jalan jika halaman punya elemen dengan id="product-container") ===
   const container = document.getElementById("product-container");
   if (container) {
+
+    // Data produk dikelompokkan berdasarkan kategori
     const productData = {
       atk: [
         { name: "Notebook", price: "Rp 4.500", img: "/notebook.jpg" },
@@ -40,13 +44,15 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     };
 
+    // Ambil tombol kategori, elemen modal, dan tombol close
     const buttons = document.querySelectorAll(".prod-btn");
     const modal = document.getElementById("imgModal");
     const modalImg = document.getElementById("imgPreview");
     const closeBtn = document.querySelector(".close");
 
+    // Fungsi untuk menampilkan produk berdasarkan kategori
     const renderProducts = (category) => {
-      container.innerHTML = "";
+      container.innerHTML = ""; // hapus isi sebelumnya
       productData[category].forEach(p => {
         container.innerHTML += `
           <div class="product-item">
@@ -57,19 +63,19 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
 
-    // Default tampil kategori ATK
+    // Tampilkan kategori default (ATK)
     renderProducts("atk");
 
-    // Tombol kategori
+    // Event untuk tombol kategori (klik = ganti produk)
     buttons.forEach(btn => {
       btn.addEventListener("click", () => {
-        buttons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        renderProducts(btn.dataset.category);
+        buttons.forEach(b => b.classList.remove("active")); // hilangkan highlight lama
+        btn.classList.add("active");                        // beri highlight baru
+        renderProducts(btn.dataset.category);               // tampilkan produk sesuai data-category
       });
     });
 
-    // Zoom gambar
+    // Klik gambar produk untuk memperbesar (buka modal)
     container.addEventListener("click", (e) => {
       if (e.target.tagName === "IMG") {
         modal.style.display = "flex";
@@ -77,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    // Tutup modal (klik tombol X atau area luar)
     if (closeBtn && modal) {
       closeBtn.addEventListener("click", () => {
         modal.style.display = "none";
@@ -87,31 +94,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // === FORM PESANAN (Hanya jika ada orderForm) ===
+  // === 🧾 FORM PESANAN (Hanya jalan di halaman order.html) ===
   const form = document.getElementById('orderForm');
   const message = document.getElementById('statusMessage');
 
   if (form && message) {
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      message.style.display = 'block';
-      form.reset();
+      e.preventDefault();                // cegah reload halaman
+      message.style.display = 'block';   // tampilkan pesan sukses
+      form.reset();                      // kosongkan form
       setTimeout(() => {
-        message.style.display = 'none';
+        message.style.display = 'none';  // sembunyikan setelah 3 detik
       }, 3000);
     });
   }
 
-  // === HAMBURGER MENU (Hanya jika ada) ===
+  // === 🍔 HAMBURGER MENU (Untuk tampilan mobile) ===
   const hamburger = document.querySelector(".hamburger");
   const nav = document.querySelector("nav");
 
   if (hamburger && nav) {
+    // Klik hamburger untuk buka/tutup menu
     hamburger.addEventListener("click", () => {
       hamburger.classList.toggle("active");
       nav.classList.toggle("active");
     });
 
+    // Tutup menu setelah link diklik
     document.querySelectorAll("nav a").forEach(link => {
       link.addEventListener("click", () => {
         hamburger.classList.remove("active");
@@ -121,26 +130,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// === POPUP UNTUK FOTO KECIL DI HOME ===
+
+// === 🖼️ POPUP FOTO KECIL DI HALAMAN HOME ===
 document.addEventListener("DOMContentLoaded", () => {
   const smallImages = document.querySelectorAll(".image-small-container img");
   const modal = document.getElementById("imgModal");
   const modalImg = document.getElementById("imgPreview");
   const closeBtn = document.querySelector(".close");
 
+  // Klik foto kecil → buka modal
   smallImages.forEach(img => {
     img.addEventListener("click", () => {
-      modal.style.display = "flex";  // tampilkan popup
-      modalImg.src = img.src;        // tampilkan gambar yg diklik
+      modal.style.display = "flex";
+      modalImg.src = img.src;
     });
   });
 
+  // Tutup modal dengan tombol X
   closeBtn.addEventListener("click", () => {
-    modal.style.display = "none"; // tutup popup
+    modal.style.display = "none";
   });
 
+  // Tutup modal dengan klik di luar gambar
   modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none"; // klik luar popup untuk menutup
+    if (e.target === modal) modal.style.display = "none";
   });
 });
-

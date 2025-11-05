@@ -4,34 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order - Toko Aruna</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- 🔹 Menghubungkan file CSS eksternal -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 🔹 Menghubungkan ikon dari Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+  <!-- 🔹 Bagian Header -->
   <header>
+    <!-- Logo toko -->
     <img src="./images/aruna.png" class="logo">
+
+    <!-- 🔹 Navigasi utama -->
     <nav>
       <a href="index.html">Home</a>
       <a href="product.html">Product</a>
-      <a href="order.html" class="active">Order</a>
+      <a href="order.html" class="active">Order</a> <!-- Halaman aktif -->
       <a href="about-us.html">About us</a>
       <a href="developer.html">Developer</a>
     </nav>
 
-    
-  <!-- 🔹 Tambahan Hamburger Menu -->
-  <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <!-- 🔹 Menu hamburger (untuk tampilan mobile) -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
+  <!-- 🔹 Konten utama halaman -->
   <main class="order">
     <h2>Form Order</h2>
     <p>Isi data berikut untuk memesan produk.</p>
 
+    <!-- 🔹 Formulir pemesanan -->
     <form id="orderForm">
       <label>Nama Pembeli :</label>
       <input type="text" name="nama" required>
@@ -45,33 +54,40 @@
       <label>No. WhatsApp / Email :</label>
       <input type="text" name="kontak" required>
 
+      <!-- Tombol untuk mengirim pesanan -->
       <button type="submit">Kirim Pesanan</button>
     </form>
-    </form>
+
+    <!-- 🔹 Pesan status setelah form dikirim -->
     <p id="statusMessage">✅ Pesanan Anda sudah terkirim!</p>
   </main>
 
-   <!-- ✅ Footer -->
+  <!-- 🔹 Footer (bagian bawah halaman) -->
   <footer class="footer">
-  <div class="footer-contact">
-    <a href="https://maps.app.goo.gl/qDjy7xkhr2C5efDHA"
-       target="_blank" class="footer-item">
-      <i class="fa-solid fa-location-dot"></i>
-      <span>Jl. Raya Kawi, Mandingasem, Gandusari, Kec. Gandusari, Kabupaten Blitar, Jawa Timur</span>
-    </a>
+    <div class="footer-contact">
 
-   <a href="https://wa.me/6285707938522" target="_blank" class="footer-item">
-      <i class="fa-solid fa-phone"></i>
-      <span>0857-0793-8522</span>
-    </a>
+      <!-- Alamat toko dengan link Google Maps -->
+      <a href="https://maps.app.goo.gl/qDjy7xkhr2C5efDHA"
+         target="_blank" class="footer-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Jl. Raya Kawi, Mandingasem, Gandusari, Kec. Gandusari, Kabupaten Blitar, Jawa Timur</span>
+      </a>
 
-    <a href="mailto:tokoarunaatk@gmail.com" class="footer-item">
-      <i class="fa-solid fa-envelope"></i>
-      <span>tokoarunaatk@gmail.com</span>
-    </a>
-  </div>
-</footer>
+      <!-- Nomor WhatsApp toko -->
+      <a href="https://wa.me/6285707938522" target="_blank" class="footer-item">
+        <i class="fa-solid fa-phone"></i>
+        <span>0857-0793-8522</span>
+      </a>
 
+      <!-- Email toko -->
+      <a href="mailto:tokoarunaatk@gmail.com" class="footer-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>tokoarunaatk@gmail.com</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- 🔹 Menghubungkan file JavaScript eksternal -->
   <script src="script.js"></script>
 </body>
 </html>

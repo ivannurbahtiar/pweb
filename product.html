@@ -4,32 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product - Toko Aruna</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- 🔹 Menghubungkan file CSS utama -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 🔹 Menghubungkan library ikon Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+  <!-- 🔹 Bagian Header -->
   <header>
+    <!-- Logo toko -->
     <img src="./images/aruna.png" class="logo">
+
+    <!-- 🔹 Menu navigasi utama -->
     <nav>
       <a href="index.html">Home</a>
-      <a href="product.html" class="active">Product</a>
+      <a href="product.html" class="active">Product</a> <!-- Halaman aktif -->
       <a href="order.html">Order</a>
       <a href="about-us.html">About us</a>
       <a href="developer.html">Developer</a>
     </nav>
 
-    
-  <!-- 🔹 Tambahan Hamburger Menu -->
-  <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <!-- 🔹 Menu hamburger untuk tampilan mobile -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
+  <!-- 🔹 Bagian utama halaman -->
   <main>
+    <!-- 🔹 Navigasi kategori produk -->
     <div class="product-nav">
+      <!-- Tombol filter kategori produk -->
       <button class="prod-btn active" data-category="atk">ATK</button>
       <button class="prod-btn" data-category="aksesoris">Aksesoris</button>
       <button class="prod-btn" data-category="perlengkapan">Perlengkapan makan</button>
@@ -37,36 +47,43 @@
       <button class="prod-btn" data-category="skincare">Skincare</button>
     </div>
 
+    <!-- 🔹 Kontainer untuk menampilkan daftar produk -->
     <div id="product-container"></div>
   </main>
 
-  <!-- Modal Gambar -->
-<div id="imgModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="imgPreview">
-</div>
-
-  <!-- ✅ Footer -->
-  <footer class="footer">
-  <div class="footer-contact">
-    <a href="https://maps.app.goo.gl/qDjy7xkhr2C5efDHA"
-       target="_blank" class="footer-item">
-      <i class="fa-solid fa-location-dot"></i>
-      <span>Jl. Raya Kawi, Mandingasem, Gandusari, Kec. Gandusari, Kabupaten Blitar, Jawa Timur</span>
-    </a>
-
-    <a href="https://wa.me/6285707938522" target="_blank" class="footer-item">
-      <i class="fa-solid fa-phone"></i>
-      <span>0857-0793-8522</span>
-    </a>
-
-    <a href="mailto:tokoarunaatk@gmail.com" class="footer-item">
-      <i class="fa-solid fa-envelope"></i>
-      <span>tokoarunaatk@gmail.com</span>
-    </a>
+  <!-- 🔹 Modal gambar (muncul saat gambar produk diklik) -->
+  <div id="imgModal" class="modal">
+    <!-- Tombol untuk menutup modal -->
+    <span class="close">&times;</span>
+    <!-- Gambar yang diperbesar akan ditampilkan di sini -->
+    <img class="modal-content" id="imgPreview">
   </div>
-</footer>
 
+  <!-- 🔹 Bagian Footer -->
+  <footer class="footer">
+    <div class="footer-contact">
+      <!-- 🔹 Alamat toko -->
+      <a href="https://maps.app.goo.gl/qDjy7xkhr2C5efDHA"
+         target="_blank" class="footer-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Jl. Raya Kawi, Mandingasem, Gandusari, Kec. Gandusari, Kabupaten Blitar, Jawa Timur</span>
+      </a>
+
+      <!-- 🔹 Nomor WhatsApp toko -->
+      <a href="https://wa.me/6285707938522" target="_blank" class="footer-item">
+        <i class="fa-solid fa-phone"></i>
+        <span>0857-0793-8522</span>
+      </a>
+
+      <!-- 🔹 Email toko -->
+      <a href="mailto:tokoarunaatk@gmail.com" class="footer-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>tokoarunaatk@gmail.com</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- 🔹 Menghubungkan file JavaScript untuk fungsi interaktif -->
   <script src="script.js"></script>
 </body>
 </html>

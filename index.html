@@ -1,73 +1,99 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <!-- 🔹 Menentukan jenis dokumen HTML5 -->
   <meta charset="UTF-8">
+  <!-- 🔹 Membuat tampilan web menyesuaikan ukuran layar (responsif) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 🔹 Judul halaman yang muncul di tab browser -->
   <title>Toko Aruna - Home</title>
+
+  <!-- 🔹 Menghubungkan file CSS utama -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- 🔹 Menggunakan ikon dari Font Awesome (untuk logo, ikon telepon, email, dll.) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+  <!-- ===================== BAGIAN HEADER ===================== -->
   <header>
+    <!-- 🔹 Logo toko -->
     <img src="./images/aruna.png" class="logo">
+
+    <!-- 🔹 Navigasi utama (menu bar) -->
     <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="product.html">Product</a>
-      <a href="order.html">Order</a>
-      <a href="about-us.html">About us</a>
-      <a href="developer.html">Developer</a>
+      <a href="index.html" class="active">Home</a>       <!-- Halaman utama -->
+      <a href="product.html">Product</a>                 <!-- Halaman produk -->
+      <a href="order.html">Order</a>                     <!-- Halaman pemesanan -->
+      <a href="about-us.html">About us</a>               <!-- Halaman tentang toko -->
+      <a href="developer.html">Developer</a>             <!-- Halaman pengembang -->
     </nav>
     
-  <!-- 🔹 Tambahan Hamburger Menu -->
-  <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <!-- 🔹 Tombol hamburger untuk navigasi di tampilan mobile -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
+  <!-- ===================== BAGIAN UTAMA (ISI HALAMAN HOME) ===================== -->
   <main class="home">
-  <div class="home-text">
-    <p><span>Selamat Datang di Toko Aruna Blitar!</span><br>
-    Temukan berbagai perlengkapan ATK, kosmetik, gift, dan aksesori lucu yang siap bikin harimu makin berwarna 🌸<br>
-    Belanja jadi lebih seru dan praktis bersama kami!</p>
-  </div>
+    
+    <!-- 🔹 Paragraf sambutan -->
+    <div class="home-text">
+      <p>
+        <span>Selamat Datang di Toko Aruna Blitar!</span><br>
+        Temukan berbagai perlengkapan ATK, kosmetik, gift, dan aksesori lucu yang siap bikin harimu makin berwarna 🌸<br>
+        Belanja jadi lebih seru dan praktis bersama kami!
+      </p>
+    </div>
 
-  <div class="image-small-container">
-    <img src="./images/dalam1.jpg" alt="Rak Aruna">
-    <img src="./images/dalam2.jpg" alt="Rak Aruna 2">
-  </div>
+    <!-- 🔹 Dua gambar kecil di bagian kanan/atas -->
+    <div class="image-small-container">
+      <img src="./images/dalam1.jpg" alt="Rak Aruna">
+      <img src="./images/dalam2.jpg" alt="Rak Aruna 2">
+    </div>
 
-  <img src="./images/depan_tko-removebg-preview-removebg-preview.png" alt="Toko Aruna" class="image-large">
-</main>
+    <!-- 🔹 Gambar besar toko Aruna -->
+    <img src="./images/depan_tko-removebg-preview-removebg-preview.png" alt="Toko Aruna" class="image-large">
+  </main>
 
-  <!-- ✅ Footer -->
+  <!-- ===================== BAGIAN FOOTER ===================== -->
   <footer class="footer">
-  <div class="footer-contact">
-    <a href="https://maps.app.goo.gl/qDjy7xkhr2C5efDHA"
-       target="_blank" class="footer-item">
-      <i class="fa-solid fa-location-dot"></i>
-      <span>Jl. Raya Kawi, Mandingasem, Gandusari, Kec. Gandusari, Kabupaten Blitar, Jawa Timur</span>
-    </a>
 
-    <a href="https://wa.me/6285707938522" target="_blank" class="footer-item">
-      <i class="fa-solid fa-phone"></i>
-      <span>0857-0793-8522</span>
-    </a>
+    <!-- 🔹 Informasi kontak toko -->
+    <div class="footer-contact">
+      <!-- 🔸 Alamat toko -->
+      <a href="https://maps.app.goo.gl/qDjy7xkhr2C5efDHA" target="_blank" class="footer-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Jl. Raya Kawi, Mandingasem, Gandusari, Kec. Gandusari, Kabupaten Blitar, Jawa Timur</span>
+      </a>
 
-    <a href="mailto:tokoarunaatk@gmail.com" class="footer-item">
-      <i class="fa-solid fa-envelope"></i>
-      <span>tokoarunaatk@gmail.com</span>
-    </a>
-  </div>
-  <div id="imgModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="imgPreview">
-</div>
+      <!-- 🔸 Nomor WhatsApp -->
+      <a href="https://wa.me/6285707938522" target="_blank" class="footer-item">
+        <i class="fa-solid fa-phone"></i>
+        <span>0857-0793-8522</span>
+      </a>
 
-</footer>
+      <!-- 🔸 Alamat email -->
+      <a href="mailto:tokoarunaatk@gmail.com" class="footer-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>tokoarunaatk@gmail.com</span>
+      </a>
+    </div>
 
+    <!-- 🔹 Popup modal untuk menampilkan gambar besar -->
+    <div id="imgModal" class="modal">
+      <span class="close">&times;</span>   <!-- Tombol tutup popup -->
+      <img class="modal-content" id="imgPreview"> <!-- Gambar yang ditampilkan saat popup aktif -->
+    </div>
+  </footer>
 
+  <!-- ===================== SCRIPT JAVASCRIPT ===================== -->
+  <!-- 🔹 Menghubungkan file script.js untuk interaksi (hamburger menu, popup gambar, dsb.) -->
   <script src="script.js"></script>
 </body>
 </html>

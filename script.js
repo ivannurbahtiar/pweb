@@ -1,11 +1,22 @@
+// ==============================
+// 🌐 SCRIPT UTAMA WEBSITE RJL WEB
+// File ini aktif di seluruh halaman (home, product, order, developer)
+// Namun sebagian fungsi hanya berjalan di halaman tertentu (cek setiap bagian)
+// ==============================
+
+
 // Jalankan seluruh script setelah halaman selesai dimuat
 document.addEventListener("DOMContentLoaded", () => {
 
-  // === 🛍️ PRODUK (Hanya jalan jika halaman punya elemen dengan id="product-container") ===
-  const container = document.getElementById("product-container");
-  if (container) {
+  // ============================================================
+  // 🛍️ PRODUK — hanya aktif di halaman product.html
+  // ============================================================
 
-    // Data produk dikelompokkan berdasarkan kategori
+  const container = document.getElementById("product-container"); // Elemen tempat daftar produk muncul
+
+  if (container) { // Jika halaman punya elemen product-container (berarti ini halaman product.html)
+
+    // Data produk berdasarkan kategori
     const productData = {
       atk: [
         { name: "Notebook", price: "Rp 4.500", img: "/notebook.jpg" },
@@ -44,15 +55,15 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     };
 
-    // Ambil tombol kategori, elemen modal, dan tombol close
+    // Ambil tombol kategori, modal gambar, dan tombol close
     const buttons = document.querySelectorAll(".prod-btn");
     const modal = document.getElementById("imgModal");
     const modalImg = document.getElementById("imgPreview");
     const closeBtn = document.querySelector(".close");
 
-    // Fungsi untuk menampilkan produk berdasarkan kategori
+    // Fungsi menampilkan produk berdasarkan kategori
     const renderProducts = (category) => {
-      container.innerHTML = ""; // hapus isi sebelumnya
+      container.innerHTML = ""; // Kosongkan isi sebelumnya
       productData[category].forEach(p => {
         container.innerHTML += `
           <div class="product-item">
@@ -63,19 +74,19 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
 
-    // Tampilkan kategori default (ATK)
+    // Tampilkan kategori default pertama (ATK)
     renderProducts("atk");
 
-    // Event untuk tombol kategori (klik = ganti produk)
+    // Event klik tombol kategori
     buttons.forEach(btn => {
       btn.addEventListener("click", () => {
-        buttons.forEach(b => b.classList.remove("active")); // hilangkan highlight lama
-        btn.classList.add("active");                        // beri highlight baru
-        renderProducts(btn.dataset.category);               // tampilkan produk sesuai data-category
+        buttons.forEach(b => b.classList.remove("active")); // Hilangkan highlight lama
+        btn.classList.add("active");                        // Beri highlight ke tombol aktif
+        renderProducts(btn.dataset.category);               // Tampilkan produk sesuai kategori
       });
     });
 
-    // Klik gambar produk untuk memperbesar (buka modal)
+    // Klik gambar produk untuk memperbesar (buka modal gambar)
     container.addEventListener("click", (e) => {
       if (e.target.tagName === "IMG") {
         modal.style.display = "flex";
@@ -83,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Tutup modal (klik tombol X atau area luar)
+    // Tutup modal dengan tombol X atau klik area luar
     if (closeBtn && modal) {
       closeBtn.addEventListener("click", () => {
         modal.style.display = "none";
@@ -94,33 +105,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // === 🧾 FORM PESANAN (Hanya jalan di halaman order.html) ===
-  const form = document.getElementById('orderForm');
-  const message = document.getElementById('statusMessage');
+  // ============================================================
+  // 🧾 FORM PESANAN — hanya aktif di halaman order.html
+  // ============================================================
 
-  if (form && message) {
+  const form = document.getElementById('orderForm'); // Formulir pemesanan
+  const message = document.getElementById('statusMessage'); // Pesan status
+
+  if (form && message) { // Cek apakah elemen ini ada di halaman
     form.addEventListener('submit', (e) => {
-      e.preventDefault();                // cegah reload halaman
-      message.style.display = 'block';   // tampilkan pesan sukses
-      form.reset();                      // kosongkan form
+      e.preventDefault();                // Cegah reload halaman saat submit
+      message.style.display = 'block';   // Tampilkan pesan sukses
+      form.reset();                      // Kosongkan form
       setTimeout(() => {
-        message.style.display = 'none';  // sembunyikan setelah 3 detik
+        message.style.display = 'none';  // Sembunyikan pesan setelah 3 detik
       }, 3000);
     });
   }
 
-  // === 🍔 HAMBURGER MENU (Untuk tampilan mobile) ===
+  // ============================================================
+  // 🍔 HAMBURGER MENU — aktif di semua halaman (home, product, order, developer)
+  // ============================================================
+
   const hamburger = document.querySelector(".hamburger");
   const nav = document.querySelector("nav");
 
   if (hamburger && nav) {
-    // Klik hamburger untuk buka/tutup menu
+    // Klik hamburger untuk buka/tutup menu navigasi (mobile)
     hamburger.addEventListener("click", () => {
       hamburger.classList.toggle("active");
       nav.classList.toggle("active");
     });
 
-    // Tutup menu setelah link diklik
+    // Klik salah satu link nav → otomatis tutup menu
     document.querySelectorAll("nav a").forEach(link => {
       link.addEventListener("click", () => {
         hamburger.classList.remove("active");
@@ -130,36 +147,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// ============================================================
+// 🧾 DROPDOWN PRODUK OTOMATIS — hanya aktif di halaman order.html
+// ============================================================
 
-// === 🖼️ POPUP FOTO KECIL DI HALAMAN HOME ===
-document.addEventListener("DOMContentLoaded", () => {
-  const smallImages = document.querySelectorAll(".image-small-container img");
-  const modal = document.getElementById("imgModal");
-  const modalImg = document.getElementById("imgPreview");
-  const closeBtn = document.querySelector(".close");
-
-  // Klik foto kecil → buka modal
-  smallImages.forEach(img => {
-    img.addEventListener("click", () => {
-      modal.style.display = "flex";
-      modalImg.src = img.src;
-    });
-  });
-
-  // Tutup modal dengan tombol X
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  // Tutup modal dengan klik di luar gambar
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  });
-});
-
-// === 🧾 DROPDOWN PRODUK OTOMATIS BERDASARKAN KATEGORI ===
-const kategoriSelect = document.getElementById("kategori");
-const produkSelect = document.getElementById("produk");
+const kategoriSelect = document.getElementById("kategori"); // Dropdown kategori
+const produkSelect = document.getElementById("produk");     // Dropdown produk
 
 if (kategoriSelect && produkSelect) {
   const produkList = {
@@ -170,20 +163,22 @@ if (kategoriSelect && produkSelect) {
     skincare: ["Animate 1 Paket", "Face Wash Kahf", "Face Wash Scora", "Sunscreen Azarine", "Moisturizer Scora"]
   };
 
+  // Saat kategori berubah → isi dropdown produk otomatis
   kategoriSelect.addEventListener("change", () => {
     const kategori = kategoriSelect.value;
-    produkSelect.innerHTML = '<option value="">-- Pilih Produk --</option>'; // reset opsi
+    produkSelect.innerHTML = '<option value="">-- Pilih Produk --</option>'; // Reset opsi awal
 
     if (kategori && produkList[kategori]) {
+      // Tambahkan item sesuai kategori
       produkList[kategori].forEach(item => {
         const option = document.createElement("option");
         option.value = item;
         option.textContent = item;
         produkSelect.appendChild(option);
       });
-      produkSelect.disabled = false;
+      produkSelect.disabled = false; // Aktifkan dropdown produk
     } else {
-      produkSelect.disabled = true;
+      produkSelect.disabled = true; // Nonaktifkan jika kategori belum dipilih
     }
   });
 }

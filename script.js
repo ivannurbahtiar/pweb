@@ -156,3 +156,34 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === modal) modal.style.display = "none";
   });
 });
+
+// === 🧾 DROPDOWN PRODUK OTOMATIS BERDASARKAN KATEGORI ===
+const kategoriSelect = document.getElementById("kategori");
+const produkSelect = document.getElementById("produk");
+
+if (kategoriSelect && produkSelect) {
+  const produkList = {
+    atk: ["Notebook", "Pulpen Karakter", "Tempat ATK", "Penghapus Lucu", "Kalkulator Mini"],
+    aksesoris: ["Jepit Rambut", "Bando Beruang", "Cermin Motif Kucing", "Tas Shopie Martin", "Kotak Tisu Box"],
+    perlengkapan: ["Tempat Bekal", "Lunch Box", "Botol Minum", "Tempat Makan", "Botol Minum 2"],
+    makeup: ["Cushion Skintific", "Eyeliner Implora", "Bedak Wardah Refil", "Liptint Omg", "Blush on Pixy"],
+    skincare: ["Animate 1 Paket", "Face Wash Kahf", "Face Wash Scora", "Sunscreen Azarine", "Moisturizer Scora"]
+  };
+
+  kategoriSelect.addEventListener("change", () => {
+    const kategori = kategoriSelect.value;
+    produkSelect.innerHTML = '<option value="">-- Pilih Produk --</option>'; // reset opsi
+
+    if (kategori && produkList[kategori]) {
+      produkList[kategori].forEach(item => {
+        const option = document.createElement("option");
+        option.value = item;
+        option.textContent = item;
+        produkSelect.appendChild(option);
+      });
+      produkSelect.disabled = false;
+    } else {
+      produkSelect.disabled = true;
+    }
+  });
+}

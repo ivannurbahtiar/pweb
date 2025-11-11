@@ -42,25 +42,36 @@
 
     <!-- 🔹 Formulir pemesanan -->
     <form id="orderForm">
-      <label>Nama Pembeli :</label>
-      <input type="text" name="nama" required>
+  <label>Nama Pembeli :</label>
+  <input type="text" name="nama" required>
 
-      <label>Pilih Produk :</label>
-      <input type="text" name="produk" required>
+  <!-- 🔹 Dropdown kategori -->
+  <label>Pilih Kategori :</label>
+  <select id="kategori" required>
+    <option value="">-- Pilih Kategori --</option>
+    <option value="atk">ATK</option>
+    <option value="aksesoris">Aksesoris</option>
+    <option value="perlengkapan">Perlengkapan Makan</option>
+    <option value="makeup">Make Up</option>
+    <option value="skincare">Skincare</option>
+  </select>
 
-      <label>Jumlah :</label>
-      <input type="number" name="jumlah" required>
+  <!-- 🔹 Dropdown produk (akan berubah sesuai kategori) -->
+  <label>Pilih Produk :</label>
+  <select id="produk" required disabled>
+    <option value="">-- Pilih Produk --</option>
+  </select>
 
-      <label>No. WhatsApp / Email :</label>
-      <input type="text" name="kontak" required>
+  <label>Jumlah :</label>
+  <input type="number" name="jumlah" required>
 
-      <!-- Tombol untuk mengirim pesanan -->
-      <button type="submit">Kirim Pesanan</button>
-    </form>
+  <label>No. WhatsApp / Email :</label>
+  <input type="text" name="kontak" required>
 
-    <!-- 🔹 Pesan status setelah form dikirim -->
-    <p id="statusMessage">✅ Pesanan Anda sudah terkirim!</p>
-  </main>
+  <button type="submit">Kirim Pesanan</button>
+</form>
+
+<p id="statusMessage">✅ Pesanan Anda sudah terkirim!</p>
 
   <!-- 🔹 Footer (bagian bawah halaman) -->
   <footer class="footer">

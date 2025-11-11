@@ -8,6 +8,18 @@ body {
   color: white;
 }
 
+/* =========================================================
+   🌄 BACKGROUND KHUSUS UNTUK HALAMAN HOME
+   ========================================================= */
+body.home-page {
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), /* efek gelap agar teks tetap terbaca */
+    url('./images/quality_restoration_20251111165416690.jpg') no-repeat center center fixed; /* ganti sesuai nama file */
+  background-size: cover;
+  color: white;
+}
+
+
 header {
   background: #c43756;
   display: flex;
@@ -16,6 +28,19 @@ header {
   justify-content: space-between; /* 👈 Ini yang membuat logo ke kiri & nav ke kanan */
 
 }
+
+/* 🔹 Header khusus halaman Home (transparan) */
+.home-page header {
+  background: rgba(196, 55, 86, 0.3); /* Warna #c43756 dengan transparansi 80% */
+  position: absolute;             /* Agar header menempel di atas konten */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;                  /* Supaya di atas elemen lain */
+  
+
+}
+
 
 .logo {
   width: 40px;
@@ -123,6 +148,21 @@ nav a:hover {
   text-align: center;
 }
 
+/* Agar layout halaman tetap rapi dan footer di bawah */
+/* Struktur dasar seluruh halaman */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Konten utama (main) agar isi halaman dorong footer ke bawah) */
+main {
+  flex: 1;
+}
+
 .footer-contact {
   display: flex;
   justify-content: center;
@@ -166,79 +206,12 @@ nav a:hover {
   margin-bottom: 0;
   padding-left: 40px; /* jarak dari kiri */
   color: #fff7f8;
+  padding : 100px
 }
 
 .home-text span {
   font-weight: bold;
   color: #fff;
-}
-
-/* Bungkus teks dan gambar dalam satu container */
-.content-wrapper {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap; /* agar responsif di layar kecil */
-  margin: 10px;
-}
-
-/* Bagian teks */
-.text-content {
-  flex: 1 1 300px; /* fleksibel tapi minimal 300px */
-}
-
-/* Container gambar kecil */
-.image-small-container {
-  display: flex;
-  flex-direction: row;     /* sejajar (horizontal) */
-  justify-content: flex-end; /* 🔹 dorong semua gambar ke kanan */
-  align-items: flex-end;     /* posisikan sejajar di bawah */
-  gap: 15px;                 /* jarak antar gambar */
-  padding-right: 20px;       /* jarak dari sisi kanan */
-  padding-top: 20px;         /* opsional: jarak dari atas */
-}
-
-/* Style gambar */
-.image-small-container img {
-  width: 120px;
-  height: 120px;
-  border-radius: 15px;
-  object-fit: cover;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.image-small-container img:hover {
-  transform: scale(1.05);
-}
-
-/* 📱 Responsif: gambar pindah ke bawah teks di layar sempit */
-@media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image-small-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-   align-items: center; /* agar rapi di tengah ketika di bawah */
-
-  }
-}
-
-/* FOTO TOKO BESAR DI BAWAH */
-.image-large {
-  display: block;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  border-radius: 10px;
-  margin-top: 20px;
-  opacity: 0.85; /* Transparansi 85% */
-
 }
 
 /* =========================================================
@@ -344,7 +317,7 @@ nav a:hover {
   background-color: #e04a66; /* warna merah muda latar belakang */
   justify-content: center;  /* ⬅️ membuat konten di tengah secara horizontal */
   align-items: center;      /* ⬅️ kalau mau di tengah secara vertikal juga */
-  padding: 30px;
+  padding: 0px;
   border-radius: 10px;
   display: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
@@ -397,12 +370,25 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 60px;
   max-width: 100%;
   box-sizing: border-box;
   padding: 40px 20px; /* Jarak atas/bawah 40px, kiri/kanan 20px */
-
 }
+
+/* Hanya berlaku untuk halaman developer */
+main.developer-page {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;              /* ✅ Biar card bisa pindah ke baris bawah saat layar kecil */
+  justify-content: center;      /* Tengah secara horizontal */
+  align-items: flex-start;      /* Rata atas */
+  gap: 40px;                    /* Jarak antar card */
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 40px 20px;
+}
+
 
 .dev-card {
   background: #9e2e47;
@@ -419,7 +405,6 @@ button:hover {
   border-radius: 8px;
   display: block;
 }
-
 
 /* =========================================================
    ℹ️ ABOUT PAGE — Halaman tentang toko

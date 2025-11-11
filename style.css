@@ -1,5 +1,5 @@
 /* =========================================================
-   🌍 GLOBAL STYLE — Berlaku untuk semua halamann
+   🌍 GLOBAL STYLE — Berlaku untuk semua halaman
    ========================================================= */
 body {
   margin: 0;
@@ -13,34 +13,32 @@ body {
    ========================================================= */
 body.home-page {
   background: 
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), /* efek gelap agar teks tetap terbaca */
-    url('./images/quality_restoration_20251111165416690.jpg') no-repeat center center fixed; /* ganti sesuai nama file */
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), /* Efek gelap agar teks tetap terbaca */
+    url('./images/quality_restoration_20251111165416690.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
 }
 
-
+/* =========================================================
+   🔺 HEADER UMUM (Berlaku di semua halaman)
+   ========================================================= */
 header {
   background: #c43756;
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  justify-content: space-between; /* 👈 Ini yang membuat logo ke kiri & nav ke kanan */
-
+  justify-content: space-between; /* Logo di kiri, navigasi di kanan */
 }
 
-/* 🔹 Header khusus halaman Home (transparan) */
+/* 🔹 Header khusus halaman Home (transparan dan menempel di atas) */
 .home-page header {
   background: rgba(196, 55, 86, 0.3); /* Warna #c43756 dengan transparansi 80% */
-  position: absolute;             /* Agar header menempel di atas konten */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;                  /* Supaya di atas elemen lain */
-  
-
+  z-index: 1000; /* Supaya tampil di atas elemen lain */
 }
-
 
 .logo {
   width: 40px;
@@ -48,14 +46,16 @@ header {
   margin-right: 15px;
 }
 
-/* ============ 🌐 NAVIGASI UTAMA ============ */
+/* =========================================================
+   🌐 NAVIGASI UTAMA (Menu di header)
+   ========================================================= */
 nav {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Link navigasi */
+/* Gaya link menu */
 nav a {
   color: white;
   margin: 0 10px;
@@ -75,9 +75,11 @@ nav a:hover {
   transition: background-color 0.3s ease;
 }
 
-/* ============ 🍔 HAMBURGER MENU ============ */
+/* =========================================================
+   🍔 HAMBURGER MENU (Muncul hanya di mobile)
+   ========================================================= */
 .hamburger {
-  display: none; /* disembunyikan di desktop */
+  display: none; /* Disembunyikan di desktop */
   flex-direction: column;
   cursor: pointer;
   position: absolute;
@@ -95,7 +97,7 @@ nav a:hover {
   transition: 0.3s;
 }
 
-/* Saat aktif, animasikan ikon hamburger */
+/* Efek animasi saat hamburger aktif */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -106,7 +108,9 @@ nav a:hover {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ============ 📱 MODE MOBILE ============ */
+/* =========================================================
+   📱 MODE MOBILE (Responsif)
+   ========================================================= */
 @media (max-width: 768px) {
   nav {
     position: fixed;
@@ -129,17 +133,17 @@ nav a:hover {
   }
 
   nav.active {
-    right: 0;
+    right: 0; /* Muncul dari kanan */
   }
 
   .hamburger {
-    display: flex;
+    display: flex; /* Ditampilkan di mode mobile */
   }
 }
 
-
-
-/* Footer */
+/* =========================================================
+   ⚫ FOOTER (Bagian bawah halaman)
+   ========================================================= */
 .footer {
   background-color: #111;
   color: #fff;
@@ -148,8 +152,7 @@ nav a:hover {
   text-align: center;
 }
 
-/* Agar layout halaman tetap rapi dan footer di bawah */
-/* Struktur dasar seluruh halaman */
+/* Agar layout halaman tetap rapi & footer di bawah */
 html, body {
   height: 100%;
   margin: 0;
@@ -157,8 +160,7 @@ html, body {
   flex-direction: column;
 }
 
-
-/* Konten utama (main) agar isi halaman dorong footer ke bawah) */
+/* Main isi halaman dorong footer ke bawah */
 main {
   flex: 1;
 }
@@ -175,7 +177,7 @@ main {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #f8c3d4; /* Warna pink lembut */
+  color: #f8c3d4;
   text-decoration: none;
   transition: 0.3s;
 }
@@ -197,16 +199,15 @@ main {
 }
 
 /* =========================================================
-   🏠 home — Halaman utama 
+   🏠 HOME PAGE — Halaman utama
    ========================================================= */
-/* TEKS UTAMA */
 .home-text {
   font-size: 1.2em;
   line-height: 1.6;
   margin-bottom: 0;
-  padding-left: 40px; /* jarak dari kiri */
+  padding-left: 40px;
   color: #fff7f8;
-  padding : 100px
+  padding: 100px;
 }
 
 .home-text span {
@@ -215,7 +216,7 @@ main {
 }
 
 /* =========================================================
-   🏠 product — Halaman utama produkk
+   🏷️ PRODUCT PAGE — Halaman produk
    ========================================================= */
 .product-nav {
   margin-top: 20px;
@@ -239,6 +240,7 @@ main {
   padding: 5px 10px;
 }
 
+/* Daftar produk ditampilkan grid */
 #product-container {
   display: flex;
   flex-wrap: wrap;
@@ -262,10 +264,10 @@ main {
 }
 
 /* =========================================================
-   🖼️ PRODUCT IMAGE POPUP — Efek zoom saat diklik
+   🖼️ PRODUCT IMAGE POPUP — Zoom gambar saat diklik
    ========================================================= */
 .modal {
-  display: none; /* disembunyikan awalnya */
+  display: none;
   position: fixed;
   z-index: 1000;
   padding-top: 50px;
@@ -274,7 +276,7 @@ main {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.8); /* latar belakang gelap */
+  background-color: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
 }
@@ -282,7 +284,7 @@ main {
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%; /* gambar membesar 80% dari layar */
+  width: 80%;
   max-width: 400px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255,255,255,0.5);
@@ -310,13 +312,13 @@ main {
 }
 
 /* =========================================================
-   🧾 ORDER PAGE — Halaman pemesanan produk
+   🧾 ORDER PAGE — Halaman pemesanan
    ========================================================= */
 .order {
   text-align: center;
-  background-color: #e04a66; /* warna merah muda latar belakang */
-  justify-content: center;  /* ⬅️ membuat konten di tengah secara horizontal */
-  align-items: center;      /* ⬅️ kalau mau di tengah secara vertikal juga */
+  background-color: #e04a66;
+  justify-content: center;
+  align-items: center;
   padding: 0px;
   border-radius: 10px;
   display: center;
@@ -358,7 +360,7 @@ button:hover {
 
 #statusMessage {
   margin-top: 15px;
-  color: rgb(255, 255, 255);
+  color: white;
   font-weight: bold;
   display: none;
 }
@@ -373,23 +375,23 @@ button:hover {
   gap: 60px;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 40px 20px; /* Jarak atas/bawah 40px, kiri/kanan 20px */
+  padding: 40px 20px;
 }
 
-/* Hanya berlaku untuk halaman developer */
+/* Hanya berlaku di halaman developer.html */
 main.developer-page {
   flex: 1;
   display: flex;
-  flex-wrap: wrap;              /* ✅ Biar card bisa pindah ke baris bawah saat layar kecil */
-  justify-content: center;      /* Tengah secara horizontal */
-  align-items: flex-start;      /* Rata atas */
-  gap: 40px;                    /* Jarak antar card */
+  flex-wrap: wrap; /* Biar card bisa turun ke bawah */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
   max-width: 100%;
   box-sizing: border-box;
   padding: 40px 20px;
 }
 
-
+/* Gaya setiap kartu developer */
 .dev-card {
   background: #9e2e47;
   padding: 10px;
@@ -399,9 +401,9 @@ main.developer-page {
 }
 
 .dev-card img {
-  width: 100%;             /* Isi penuh lebar kartu */
-  height: 200px;           /* Tinggi tetap agar semua sejajar */
-  object-fit: cover;       /* Potong gambar biar proporsional, tidak gepeng */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 8px;
   display: block;
 }

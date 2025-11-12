@@ -1,5 +1,5 @@
 // ==============================
-// 🌐 SCRIPT UTAMA WEBSITE RJL WEB
+// 🌐 SCRIPT UTAMA WEBSITE 
 // File ini aktif di seluruh halaman (home, product, order, developer)
 // Namun sebagian fungsi hanya berjalan di halaman tertentu (cek setiap bagian)
 // ==============================

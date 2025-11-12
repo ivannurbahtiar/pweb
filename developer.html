@@ -1,92 +1,77 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <!-- 🔹 Menentukan bahwa dokumen ini menggunakan HTML5 -->
   <meta charset="UTF-8">
-
-  <!-- 🔹 Agar tampilan web menyesuaikan ukuran layar perangkat (responsif) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- 🔹 Judul halaman yang muncul di tab browser -->
   <title>Developer - Toko Aruna</title>
-
-  <!-- 🔹 Menghubungkan file CSS utama untuk tampilan -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- 🔹 Menyertakan pustaka ikon Font Awesome untuk menampilkan ikon (seperti telepon, lokasi, email) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="developer-page">
-<body>
-  <!-- ===================== HEADER (BAGIAN ATAS) ===================== -->
   <header>
-    <!-- 🔹 Logo Toko Aruna -->
     <img src="./images/aruna.png" class="logo">
-
-    <!-- 🔹 Navigasi utama website -->
     <nav>
-      <!-- 🔸 Setiap <a> adalah tautan ke halaman berbeda -->
       <a href="index.html">Home</a>
       <a href="product.html">Product</a>
       <a href="order.html">Order</a>
       <a href="about-us.html">About us</a>
-      <!-- 🔸 class="active" menandakan halaman yang sedang dibuka -->
       <a href="developer.html" class="active">Developer</a>
     </nav>
-
-    <!-- 🔹 Tombol hamburger (hanya muncul di tampilan mobile) -->
     <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
   </header>
 
-  <!-- ===================== BAGIAN UTAMA (ISI HALAMAN) ===================== -->
   <main class="developer-page">
-    <!-- 🔹 Setiap developer ditampilkan dalam satu "kartu" (dev-card) -->
 
     <div class="dev-card">
-      <!-- 🔸 Foto anggota tim -->
       <img src="./images/Latar Biru Akt. 14.png" alt="Ivan Nurbahtiar">
-      <!-- 🔸 Nama anggota -->
       <p>Ivan Nurbahtiar</p>
+      <a href="https://ivannurbahtiar.github.io/test/" target="_blank" class="github-link">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
     </div>
 
     <div class="dev-card">
       <img src="./images/bima.jpg" alt="Helmy Bima Pratama">
       <p>Helmy Bima Pratama</p>
+      <a href="https://helmy-bima.github.io/Portofolio-Digital/portofolio/index.html" target="_blank" class="github-link">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
     </div>
 
     <div class="dev-card">
       <img src="./images/hani.jpg" alt="Bintang Hanifa A.">
       <p>Bintang Haniva A.</p>
+      <a href="https://bintanghaniva123.github.io/haniva/" target="_blank" class="github-link">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
     </div>
 
     <div class="dev-card">
       <img src="./images/kesa.jpg" alt="Kesanina Promay W">
       <p>Kesanina Promay W</p>
+      <a href="https://kesanina.github.io/portofolio/" target="_blank" class="github-link">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
     </div>
+
   </main>
 
-  <!-- ===================== FOOTER (BAGIAN BAWAH) ===================== -->
   <footer class="footer">
     <div class="footer-contact">
-
-      <!-- 🔹 Link ke lokasi toko di Google Maps -->
       <a href="https://maps.app.goo.gl/qDjy7xkhr2C5efDHA"
          target="_blank" class="footer-item">
         <i class="fa-solid fa-location-dot"></i>
-        <span>Jl. Raya Kawi, Mandingasem, Gandusari, Kec. Gandusari, Kabupaten Blitar, Jawa Timur</span>
+        <span>Jl. Raya Kawi, Mandingasem, Gandusari, Kabupaten Blitar</span>
       </a>
 
-      <!-- 🔹 Link ke WhatsApp toko -->
       <a href="https://wa.me/6285707938522" target="_blank" class="footer-item">
         <i class="fa-solid fa-phone"></i>
         <span>0857-0793-8522</span>
       </a>
 
-      <!-- 🔹 Link ke email toko -->
       <a href="mailto:tokoarunaatk@gmail.com" class="footer-item">
         <i class="fa-solid fa-envelope"></i>
         <span>tokoarunaatk@gmail.com</span>
@@ -94,7 +79,6 @@
     </div>
   </footer>
 
-  <!-- 🔹 Menghubungkan file JavaScript untuk fitur interaktif (seperti hamburger menu) -->
   <script src="script.js"></script>
 </body>
 </html>

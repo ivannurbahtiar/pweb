@@ -409,6 +409,29 @@ main.developer-page {
 }
 
 /* =========================================================
+   🐱 GITHUB LINK — Untuk tombol GitHub di bawah nama developer
+   ========================================================= */
+.github-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: #24292e; /* Warna khas GitHub */
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.github-link i {
+  margin-right: 6px;
+}
+
+.github-link:hover {
+  background-color: #333;
+}
+
+/* =========================================================
    ℹ️ ABOUT PAGE — Halaman tentang toko
    ========================================================= */
 .about {

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang - Toko Aruna</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <img src="./images/aruna.png" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="order.html">Order</a>
+      <a href="developer.html">Developer</a>
+
+    <!-- 🔹 Ikon keranjang dengan badge -->
+     <a href="cart.html" class="cart-icon">
+     <i class="fa-solid fa-cart-shopping"></i>
+      <span id="cart-count" class="cart-badge"></span>
+     </a>
+    </nav>
+  </header>
+
+  <!-- Konten utama -->
+  <main class="cart-page">
+    <h2>🛒 Keranjang Belanja</h2>
+    <div id="cart-container"></div>
+    <div id="cart-summary">
+      <p><strong>Total:</strong> <span id="cart-total">Rp 0</span></p>
+      <button id="checkout-btn">Lanjut ke Pembayaran</button>
+      <button id="clear-cart">Kosongkan Keranjang</button>
+    </div>
+  </main>
+
+  <!-- ===================== BAGIAN FOOTER ===================== -->
+  <footer class="footer">
+
+    <!-- 🔹 Kontak toko -->
+    <div class="footer-contact">
+      <!-- 📍 Alamat -->
+      <a href="https://maps.app.goo.gl/qDjy7xkhr2C5efDHA" target="_blank" class="footer-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Jl. Raya Kawi, Mandingasem, Gandusari, Kabupaten Blitar, Jawa Timur</span>
+      </a>
+
+      <!-- 📞 WhatsApp -->
+      <a href="https://wa.me/6285707938522" target="_blank" class="footer-item">
+        <i class="fa-solid fa-phone"></i>
+        <span>0857-0793-8522</span>
+      </a>
+
+      <!-- ✉️ Email -->
+      <a href="mailto:tokoarunaatk@gmail.com" class="footer-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>tokoarunaatk@gmail.com</span>
+      </a>
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
